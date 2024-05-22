@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { appTheme } from './public/appTheme';
 
 const config: Config = {
   prefix: 'tw-',
@@ -7,7 +8,9 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {},
+  theme: { 
+    extend: { ...appTheme }
+  },
   plugins: [],
   // corePlugins: {
   //   preflight: false

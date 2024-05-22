@@ -1,11 +1,11 @@
 import { StyledEngineProvider, ThemeProvider } from '@mui/material';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Nunito_Sans } from "next/font/google";
+import { muiTheme } from '../styles/muiTheme';
 import "./globals.css";
-import theme from './theme';
 
-const inter = Inter({ subsets: ["latin"] });
+const nunito = Nunito_Sans({ subsets: ["latin"], weight: ['400', '700'], variable: '--font-nunito' });
 
 export const metadata: Metadata = {
   title: "Book wise",
@@ -18,11 +18,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className} id="__next">
+    <html lang="pt-BR">
+      <body className={nunito.variable} id="__next">
         <AppRouterCacheProvider options={{ key: 'css', enableCssLayer: true, prepend: true }}>
             <StyledEngineProvider injectFirst>
-              <ThemeProvider theme={theme}>
+              <ThemeProvider theme={muiTheme}>
                   {children}
               </ThemeProvider>
             </StyledEngineProvider>
