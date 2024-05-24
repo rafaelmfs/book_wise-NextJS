@@ -17,9 +17,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const bodyClassNames = `${nunito.variable} tw-min-w-full tw-min-h-screen tw-overflow-hidden`
   return (
     <html lang="pt-BR">
-      <body className={nunito.variable} id="__next">
+      <body className={bodyClassNames} id="__next">
         <AppRouterCacheProvider options={{ key: 'css', enableCssLayer: true, prepend: true }}>
             <StyledEngineProvider injectFirst>
               <ThemeProvider theme={muiTheme}>

@@ -24,6 +24,11 @@ export const appTheme = {
     lg: '1.125rem',
     xl: '1.25rem',
     '2xl': '1.5rem',
+
+    "heading-xs": '1rem',
+    "heading-sm": '1.125rem',
+    "heading-md": '1.25rem',
+    "heading-lg": '1.5rem'
   },
 
   fontWeights: {
@@ -32,7 +37,7 @@ export const appTheme = {
     bold: '700',
   },
 
-  lineHeights: {
+  lineHeight: {
     shorter: '125%',
     short: '140%',
     base: '160%',
