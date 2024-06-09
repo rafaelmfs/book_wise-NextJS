@@ -12,6 +12,8 @@
     "seed": "tsx ./prisma/seed.ts"
   },
   "dependencies": {
+    "@auth/core": "^0.31.0",
+    "@auth/prisma-adapter": "^2.1.0",
     "@emotion/cache": "^11.11.0",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
@@ -19,6 +21,7 @@
     "@mui/material-nextjs": "^5.15.11",
     "@prisma/client": "^5.14.0",
     "next": "14.2.3",
+    "next-auth": "^4.24.7",
     "react": "^18",
     "react-dom": "^18",
     "uuid": "^9.0.1"

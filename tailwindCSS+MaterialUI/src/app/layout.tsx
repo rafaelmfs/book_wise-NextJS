@@ -1,11 +1,13 @@
-import { StyledEngineProvider, ThemeProvider } from '@mui/material';
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
+import { AppContexts } from "@/contexts/AppContexts";
 import type { Metadata } from "next";
 import { Nunito_Sans } from "next/font/google";
-import { muiTheme } from '../styles/muiTheme';
-import "./globals.css";
+import "../styles/globals.css";
 
-const nunito = Nunito_Sans({ subsets: ["latin"], weight: ['400', '700'], variable: '--font-nunito' });
+const nunito = Nunito_Sans({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-nunito",
+});
 
 export const metadata: Metadata = {
   title: "Book wise",
@@ -17,17 +19,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const bodyClassNames = `${nunito.variable} tw-min-w-full tw-min-h-screen tw-overflow-hidden`
+  const bodyClassNames = `${nunito.variable} tw-min-w-full tw-min-h-screen tw-overflow-hidden`;
   return (
     <html lang="pt-BR">
       <body className={bodyClassNames} id="__next">
-        <AppRouterCacheProvider options={{ key: 'css', enableCssLayer: true, prepend: true }}>
-            <StyledEngineProvider injectFirst>
-              <ThemeProvider theme={muiTheme}>
-                  {children}
-              </ThemeProvider>
-            </StyledEngineProvider>
-        </AppRouterCacheProvider>
+        <AppContexts>{children}</AppContexts>
       </body>
     </html>
   );
